@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Android_NewKotlin</string>
+    <string name="scan_button">scanBtn</string>
+</resources>
