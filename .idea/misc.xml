@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidTestFolder/Android_BLE_Rssi_Kotlin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1415" />
+        <entry key="..\:/AndroidTestFolder/Android_BLE_Rssi_Kotlin/app/src/main/res/drawable/backgroundcolor.xml" value="0.1415" />
+        <entry key="..\:/AndroidTestFolder/Android_BLE_Rssi_Kotlin/app/src/main/res/drawable/circle_button.xml" value="0.1415" />
+        <entry key="..\:/AndroidTestFolder/Android_BLE_Rssi_Kotlin/app/src/main/res/drawable/circle_button2.xml" value="0.1415" />
+        <entry key="..\:/AndroidTestFolder/Android_BLE_Rssi_Kotlin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1415" />
+        <entry key="..\:/AndroidTestFolder/Android_BLE_Rssi_Kotlin/app/src/main/res/layout/activity_main.xml" value="0.38796296296296295" />
+        <entry key="..\:/AndroidTestFolder/Android_BLE_Rssi_Kotlin/app/src/main/res/layout/googlemap.xml" value="0.34629629629629627" />
+        <entry key="..\:/AndroidTestFolder/Android_BLE_Rssi_Kotlin/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1415" />
         <entry key="..\:/Android_NewKotlin/app/src/main/res/drawable/circle_button.xml" value="0.1705" />
         <entry key="..\:/Android_NewKotlin/app/src/main/res/drawable/circle_button2.xml" value="0.181" />
         <entry key="..\:/Android_NewKotlin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1705" />

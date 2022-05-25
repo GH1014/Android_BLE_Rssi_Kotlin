@@ -8,6 +8,7 @@ import android.bluetooth.le.ScanResult
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Insets.add
 import android.os.*
 import android.util.Log
 import android.view.View
@@ -202,6 +203,8 @@ class MainActivity : AppCompatActivity() {
             bluetoothAdapter?.disable()
         }
     }
+
+
 }
 
 private fun Handler.postDelayed(function: () -> Unit?, scanPeriod: Int) {

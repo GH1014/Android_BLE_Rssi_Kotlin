@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.moblie.android_newkotlin">
 
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
@@ -21,7 +22,8 @@
         android:theme="@style/Theme.Android_NewKotlin">
         <activity
             android:name=".DeviceControlActivity"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -31,6 +33,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDMqd0pYPLMjfKY17VPcc7J0iIkGCokhNI" />
+
     </application>
 
 </manifest>
