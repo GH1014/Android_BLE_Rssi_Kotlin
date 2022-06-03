@@ -5,10 +5,12 @@ import android.annotation.TargetApi
 import android.bluetooth.*
 import android.bluetooth.le.ScanCallback
 import android.bluetooth.le.ScanResult
+import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.content.pm.PackageManager
-import android.graphics.Insets.add
+import android.location.Location
 import android.os.*
 import android.util.Log
 import android.view.View
@@ -16,11 +18,20 @@ import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.view.isInvisible
-import androidx.core.view.isVisible
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.*
 import kotlinx.coroutines.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnMapReadyCallback {
+
+    private lateinit var marker: Marker
+    private lateinit var mMap: GoogleMap
+
+    var latitude :Double = 12.0
+    var longtitude :Double = 13.1
 
     private val REQUEST_ENABLE_BT = 1
     private val REQUEST_ALL_PERMISSION = 2
@@ -30,6 +41,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tv1 : TextView
 
     var scanTf: Boolean = true
+    var myLocation: Boolean = false
 
     private var bleGatt: BluetoothGatt? = null
     private var mContext: Context? = null
@@ -39,7 +51,6 @@ class MainActivity : AppCompatActivity() {
     private val SCAN_PERIOD = 1
     private val handler = Handler()
     private val mLeScanCallback = @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-
 
     object : ScanCallback() {
         override fun onScanFailed(errorCode: Int) {
@@ -150,6 +161,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+
+
         val scanOnBtn: ImageButton = findViewById(R.id.scanOnBtn)
         val scanOffBtn: ImageButton = findViewById(R.id.scanOffBtn)
 
@@ -172,16 +188,10 @@ class MainActivity : AppCompatActivity() {
                         delay(500)
                     }
                     scanDevice(false)
-                    v?.visibility = View.VISIBLE
                 }
             }
-        }
 
-        scanOffBtn.setOnClickListener { v: View? -> // Scan Button Onclick
-            bluetoothOff()
-            scanTf = false
-
-            v?.visibility = View.VISIBLE
+            scanOffBtn.visibility = View.VISIBLE
         }
     }
 
@@ -205,7 +215,32 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    // 플래그 이벤트(물건 도난) 발생
+
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
+
+        val location = LatLng(latitude, longtitude)
+
+        println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+        println("onMapReady latitude : " + latitude)
+
+
+        mMap.setMapStyle(MapStyleOptions(resources.getString(R.string.mapstyle)))
+        mMap.addMarker(MarkerOptions().position(location).title("Marker in Sydney"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 10f))
+    }
+
+    fun locationTrue(){
+        myLocation = true
+    }
+
 }
+
+
+
+
 
 private fun Handler.postDelayed(function: () -> Unit?, scanPeriod: Int) {
 

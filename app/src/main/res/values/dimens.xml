@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="circle_size_small">130dp</dimen>
+    <dimen name="circle_size_large">190dp</dimen>
+    <dimen name="circle_size_medium">160dp</dimen>
+</resources>
