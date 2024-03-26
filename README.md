@@ -2,6 +2,36 @@
 ![안드로이드 코틀린 rssi](https://github.com/GH1014/Android_BLE_Rssi_Kotlin/assets/95550744/391d48e1-4b2f-4d65-8962-be347758cc1f)
 
 
+버튼을 클릭 시 코루틴을 사용하여 원하는 디바이스를 찾는 함수입니다.
+
+        scanOnBtn.setOnClickListener { v: View? -> // Scan Button Onclick
+            bluetoothOn()
+            scanTf = true
+
+            if (!hasPermissions(this, PERMISSIONS)) {
+                requestPermissions(PERMISSIONS, REQUEST_ALL_PERMISSION)
+            }
+
+            val temp = CoroutineScope(Dispatchers.Default).launch {
+                val temp = launch {
+                    while (scanTf){
+                        scanDevice(true)
+                        delay(500)
+                    }
+                    scanDevice(false)
+                }
+            }
+
+            scanOffBtn.visibility = View.VISIBLE
+        }
+
+
+
+
+
+
+
+
 안드로이드 플랫폼을 기반으로 개발한 이 어플리케이션은 Bluetooth Low Energy (BLE)와 Received Signal Strength Indicator (RSSI)를 활용하여 장치의 위치와 거리를 실시간으로 시각적으로 보여주는 기능을 제공합니다.
 
 Kotlin 언어를 사용하였으며, 안드로이드 스튜디오를 이용하여 개발되었습니다.
