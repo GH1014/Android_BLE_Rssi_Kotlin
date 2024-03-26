@@ -24,11 +24,10 @@ RSSI 측정: 연결된 장치와의 통신을 통해 RSSI 값을 수신합니다
         scanOnBtn.setOnClickListener { v: View? -> // Scan Button Onclick
             bluetoothOn()
             scanTf = true
-
+        
             if (!hasPermissions(this, PERMISSIONS)) {
                 requestPermissions(PERMISSIONS, REQUEST_ALL_PERMISSION)
             }
-
             val temp = CoroutineScope(Dispatchers.Default).launch {
                 val temp = launch {
                     while (scanTf){
@@ -38,25 +37,21 @@ RSSI 측정: 연결된 장치와의 통신을 통해 RSSI 값을 수신합니다
                     scanDevice(false)
                 }
             }
-
             scanOffBtn.visibility = View.VISIBLE
         }
 
 
 지도에 물건을 표시하는 함수입니다.
 
-    override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
-
-        val location = LatLng(latitude, longtitude)
-
-        println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-        println("onMapReady latitude : " + latitude)
-
-        mMap.setMapStyle(MapStyleOptions(resources.getString(R.string.mapstyle)))
-        mMap.addMarker(MarkerOptions().position(location).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 10f))
-    }
+        override fun onMapReady(googleMap: GoogleMap) {
+                mMap = googleMap
+                
+                val location = LatLng(latitude, longtitude)
+                
+                mMap.setMapStyle(MapStyleOptions(resources.getString(R.string.mapstyle)))
+                mMap.addMarker(MarkerOptions().position(location).title("Marker in Sydney"))
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 10f))
+        }
 
 
 
