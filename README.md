@@ -1,10 +1,16 @@
-# 안드로이드 BLE 및 RSSI를 활용한 장치 위치 및 거리 시각화 어플리케이션
-![안드로이드 코틀린 rssi](https://github.com/GH1014/Android_BLE_Rssi_Kotlin/assets/95550744/391d48e1-4b2f-4d65-8962-be347758cc1f)
+## 안드로이드 BLE 및 RSSI를 활용한 장치 위치 찾기 어플
 
+#프로젝트 개요
+안드로이드 플랫폼을 기반으로 개발한 어플리케이션입니다.  Bluetooth Low Energy (BLE)와 Received Signal Strength Indicator (RSSI) 를 활용하여 장치의 위치와 거리를 실시간으로 시각적으로 보여주는 기능을 제공합니다.
 
-안드로이드 플랫폼을 기반으로 개발한 어플리케이션입니다. Bluetooth Low Energy (BLE)와 Received Signal Strength Indicator (RSSI) 를 활용하여 장치의 위치와 거리를 실시간으로 시각적으로 보여주는 기능을 제공합니다.
+#어플리케이션 
+
 
 Kotlin 언어를 사용하였으며, 안드로이드 스튜디오를 이용하여 개발되었습니다.
+
+#구동 스크린샷
+![안드로이드 코틀린 rssi](https://github.com/GH1014/Android_BLE_Rssi_Kotlin/assets/95550744/391d48e1-4b2f-4d65-8962-be347758cc1f)
+
 
 
 주요 기능:
