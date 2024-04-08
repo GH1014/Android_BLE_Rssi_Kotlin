@@ -16,10 +16,6 @@ Bluetooth Low Energy (BLE)와 Received Signal Strength Indicator (RSSI) 를 활�
 
 Kotlin, Android Studio
 
-BluetoothAdapter 및 BluetoothLeScanner 클래스 활용
-
-googleMap API 활용
-
 --------------------------------------------------------
 
 **구동 스크린샷**
