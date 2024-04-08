@@ -1,6 +1,7 @@
 ## 안드로이드 BLE 및 RSSI를 활용한 장치 위치 찾기 어플
 
-#프로젝트 개요
+*프로젝트 개요
+
 안드로이드 플랫폼을 기반으로 개발한 어플리케이션입니다.  
 
 Bluetooth Low Energy (BLE)와 Received Signal Strength Indicator (RSSI) 를 활용하여 장치의 위치와 거리를 실시간으로 시각적으로 보여주는 기능을 제공합니다.
